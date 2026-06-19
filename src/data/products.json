@@ -1,0 +1,177 @@
+[
+  {
+    "id": "saco-beige-001",
+    "name": "Saco Clásico Beige",
+    "category": "sacos",
+    "description": "Saco artesanal tejido a dos agujas con lana merino premium. Corte clásico, ideal para el día a día con un toque de elegancia natural.",
+    "price": 48000,
+    "images": ["/images/products/saco-beige.png"],
+    "colors": [
+      { "name": "Beige", "hex": "#D4B896" },
+      { "name": "Crema", "hex": "#F5F0E8" },
+      { "name": "Arena", "hex": "#C9B99E" }
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": true,
+    "inStock": true,
+    "material": "100% Lana Merino",
+    "slug": "saco-clasico-beige"
+  },
+  {
+    "id": "sweater-gris-002",
+    "name": "Sweater Tejido Gris",
+    "category": "sweaters",
+    "description": "Sweater de punto inglés en lana mezcla, textura suave y abrigada. Perfecto para tardes frías con estilo minimalista.",
+    "price": 42000,
+    "images": ["/images/products/sweater-gris.png"],
+    "colors": [
+      { "name": "Gris Cálido", "hex": "#9C9087" },
+      { "name": "Gris Oscuro", "hex": "#736860" },
+      { "name": "Blanco Natural", "hex": "#FDFAF5" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "featured": true,
+    "inStock": true,
+    "material": "Lana Mezcla Premium",
+    "slug": "sweater-tejido-gris"
+  },
+  {
+    "id": "bufanda-caramelo-003",
+    "name": "Bufanda Chunky Caramelo",
+    "category": "accesorios",
+    "description": "Bufanda de punto grueso tejida a mano. Lana gruesa y suave que brinda calor y estilo en temporada fría.",
+    "price": 22000,
+    "images": ["/images/products/bufanda-caramelo.png"],
+    "colors": [
+      { "name": "Caramelo", "hex": "#C27B40" },
+      { "name": "Tostado", "hex": "#8B6914" },
+      { "name": "Beige", "hex": "#D4B896" }
+    ],
+    "sizes": ["Única"],
+    "featured": true,
+    "inStock": true,
+    "material": "Lana Gruesa Artesanal",
+    "slug": "bufanda-chunky-caramelo"
+  },
+  {
+    "id": "gorro-crema-004",
+    "name": "Gorro Clásico Crema",
+    "category": "gorros",
+    "description": "Gorro tejido a dos agujas con borde doble. Cómodo, abrigado y con acabado artesanal impecable.",
+    "price": 16000,
+    "images": ["/images/products/gorro-crema.png"],
+    "colors": [
+      { "name": "Crema", "hex": "#F5F0E8" },
+      { "name": "Gris", "hex": "#9C9087" },
+      { "name": "Caramelo", "hex": "#C27B40" }
+    ],
+    "sizes": ["Única"],
+    "featured": true,
+    "inStock": true,
+    "material": "Lana Merino",
+    "slug": "gorro-clasico-crema"
+  },
+  {
+    "id": "buzo-marron-005",
+    "name": "Buzo Tejido Marrón",
+    "category": "buzos",
+    "description": "Buzo de punto con cuello redondo y manga larga. Tejido en lana merino suave, ideal para el invierno porteño.",
+    "price": 38000,
+    "images": ["/images/products/buzo-marron.png"],
+    "colors": [
+      { "name": "Marrón", "hex": "#7C6B58" },
+      { "name": "Tierra", "hex": "#3D2B1F" },
+      { "name": "Mostaza", "hex": "#B8860B" }
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": false,
+    "inStock": true,
+    "material": "Lana Merino",
+    "slug": "buzo-tejido-marron"
+  },
+  {
+    "id": "saco-oversized-006",
+    "name": "Saco Oversized Natural",
+    "category": "sacos",
+    "description": "Saco amplio de corte relajado, tejido en punto musgo. Una prenda versátil que combina comodidad y diseño actual.",
+    "price": 55000,
+    "images": ["/images/products/saco-beige.png"],
+    "colors": [
+      { "name": "Natural", "hex": "#D4C5AE" },
+      { "name": "Gris Perla", "hex": "#C4B8AD" }
+    ],
+    "sizes": ["S/M", "L/XL"],
+    "featured": false,
+    "inStock": true,
+    "material": "Mezcla Lana y Alpaca",
+    "slug": "saco-oversized-natural"
+  },
+  {
+    "id": "sweater-trenzado-007",
+    "name": "Sweater Trenzado Crema",
+    "category": "sweaters",
+    "description": "Sweater con diseño de trenzas clásicas, tejido a mano con punto cable. Un clásico artesanal de temporada.",
+    "price": 46000,
+    "images": ["/images/products/sweater-gris.png"],
+    "colors": [
+      { "name": "Crema", "hex": "#F5F0E8" },
+      { "name": "Beige", "hex": "#D4B896" }
+    ],
+    "sizes": ["XS", "S", "M", "L"],
+    "featured": false,
+    "inStock": true,
+    "material": "Lana Merino Premium",
+    "slug": "sweater-trenzado-crema"
+  },
+  {
+    "id": "set-bufanda-gorro-008",
+    "name": "Set Bufanda + Gorro",
+    "category": "accesorios",
+    "description": "Combo de bufanda y gorro tejidos a juego. El regalo perfecto o el complemento ideal para el invierno.",
+    "price": 32000,
+    "images": ["/images/products/gorro-crema.png"],
+    "colors": [
+      { "name": "Beige/Crema", "hex": "#D4B896" },
+      { "name": "Gris/Gris", "hex": "#9C9087" }
+    ],
+    "sizes": ["Única"],
+    "featured": false,
+    "inStock": true,
+    "material": "Lana Merino",
+    "slug": "set-bufanda-gorro"
+  },
+  {
+    "id": "buzo-cuello-alto-009",
+    "name": "Buzo Cuello Alto Gris",
+    "category": "buzos",
+    "description": "Buzo tejido de cuello alto, perfecto para los días más fríos. Silueta moderna y tejido cálido.",
+    "price": 44000,
+    "images": ["/images/products/buzo-marron.png"],
+    "colors": [
+      { "name": "Gris Cálido", "hex": "#9C9087" },
+      { "name": "Marrón", "hex": "#7C6B58" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "featured": false,
+    "inStock": true,
+    "material": "Lana Mezcla",
+    "slug": "buzo-cuello-alto-gris"
+  },
+  {
+    "id": "saco-boton-010",
+    "name": "Saco con Botones Caramelo",
+    "category": "sacos",
+    "description": "Saco abierto con botonadura de madera. Tejido en punto arroz con lana artesanal de hebra natural.",
+    "price": 52000,
+    "images": ["/images/products/bufanda-caramelo.png"],
+    "colors": [
+      { "name": "Caramelo", "hex": "#C27B40" },
+      { "name": "Tostado", "hex": "#8B6914" }
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": false,
+    "inStock": true,
+    "material": "Lana Artesanal",
+    "slug": "saco-boton-caramelo"
+  }
+]
