@@ -6,13 +6,128 @@ import ProductCard from '@/components/ProductCard';
 const featured = products.filter((p) => p.featured).slice(0, 4);
 
 const CATEGORIES = [
-  { key: 'sacos', label: 'Sacos', icon: '🧥' },
-  { key: 'sweaters', label: 'Sweaters', icon: '👕' },
-  { key: 'buzos', label: 'Buzos', icon: '🫙' },
-  { key: 'gorros', label: 'Gorros', icon: '🎩' },
-  { key: 'bufandas', label: 'Bufandas', icon: '🧣' },
-  { key: 'accesorios', label: 'Accesorios', icon: '✨' },
+  { key: 'sacos', label: 'Sacos' },
+  { key: 'sweaters', label: 'Sweaters' },
+  { key: 'buzos', label: 'Buzos' },
+  { key: 'gorros', label: 'Gorros' },
+  { key: 'bufandas', label: 'Bufandas' },
+  { key: 'accesorios', label: 'Accesorios' },
 ];
+
+// --- SVG Icons for Categories ---
+
+function SacosIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M20.5 8.5v11.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V8.5a2.5 2.5 0 0 1 2.5-2.5h12a2.5 2.5 0 0 1 2.5 2.5Z" />
+      <path d="M12 6v16M8.5 6l3.5 4 3.5-4" />
+      <path d="M3.5 10.5 7 9" />
+      <path d="M20.5 10.5 17 9" />
+    </svg>
+  );
+}
+
+function SweatersIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M8 3h8l5 4v5l-3-1v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l-3 1V7l5-4Z" />
+      <path d="M10 3a2 2 0 0 0 4 0" />
+      <path d="M6 18h12" />
+    </svg>
+  );
+}
+
+function BuzosIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M8 5.5h8l5 3v4.5l-3-1v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l-3 1V8.5l5-3Z" />
+      <path d="M9 5.5V3a2 2 0 0 1 4 0v2.5M11 3v2.5" />
+      <path d="M9 15h6l1 3H8l1-3Z" />
+    </svg>
+  );
+}
+
+function GorrosIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <rect x="5" y="15" width="14" height="4" rx="1" />
+      <path d="M6 15A6 6 0 0 1 18 15" />
+      <circle cx="12" cy="7" r="2.5" />
+    </svg>
+  );
+}
+
+function BufandasIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <rect x="6" y="5" width="12" height="4" rx="2" />
+      <path d="M8 9v8M8 17l-1 2M8 17l1 2" />
+      <path d="M12 9v10M12 19l-1 2M12 19l1 2" />
+    </svg>
+  );
+}
+
+function AccesoriosIcon({ color = 'currentColor', size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      <path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z" />
+    </svg>
+  );
+}
+
+const CATEGORY_ICON_MAP = {
+  sacos: SacosIcon,
+  sweaters: SweatersIcon,
+  buzos: BuzosIcon,
+  gorros: GorrosIcon,
+  bufandas: BufandasIcon,
+  accesorios: AccesoriosIcon,
+};
+
+// --- SVG Icons for Brand Values ---
+
+function HandmadeIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M8 8c2.5-1 5.5 1 8 0M6 12c4-2 8 2 12 0M8 16c2.5 1 5.5-1 8 0" />
+      <line x1="3" y1="21" x2="9" y2="15" />
+      <circle cx="3" cy="21" r="0.5" />
+    </svg>
+  );
+}
+
+function PremiumWoolIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M12 22V2M12 7c2-1 4-2 6-1M12 11c3 0 5-1 6 1M12 15c2 1 4 0 6 2M12 7c-2-1-4-2-6-1M12 11c-3 0-5-1-6 1M12 15c-2 1-4 0-6 2" />
+    </svg>
+  );
+}
+
+function UniquePieceIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z" />
+    </svg>
+  );
+}
+
+function MadeWithLoveIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    </svg>
+  );
+}
+
+const VALUE_ICON_MAP = {
+  artesanal: HandmadeIcon,
+  wool: PremiumWoolIcon,
+  unique: UniquePieceIcon,
+  love: MadeWithLoveIcon,
+};
 
 export default function HomePage() {
   return (
@@ -45,8 +160,12 @@ export default function HomePage() {
               color: '#C2AD92',
               marginBottom: '1.25rem',
               animation: 'fadeUp 0.6s ease-out 0.1s both',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
             }}>
-              🧶 Tejido a mano · Buenos Aires
+              <span style={{ fontSize: '0.65rem', color: '#C2AD92' }}>●</span>
+              Tejido a mano · Buenos Aires
             </p>
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
@@ -107,19 +226,24 @@ export default function HomePage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', textAlign: 'center' }}>
             {[
-              { icon: '🧶', title: '100% Artesanal', desc: 'Cada prenda es tejida a mano, pieza por pieza.' },
-              { icon: '🌿', title: 'Lana Premium', desc: 'Usamos lana merino y materiales naturales de calidad.' },
-              { icon: '♾️', title: 'Prendas únicas', desc: 'Sin producción en masa. Cada una es irrepetible.' },
-              { icon: '💛', title: 'Hecho con amor', desc: 'Una emprendedora detrás de cada tejido.' },
-            ].map((v) => (
-              <div key={v.title}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{v.icon}</div>
-                <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.125rem', fontWeight: 700, color: '#F5F0E8', marginBottom: '0.5rem' }}>
-                  {v.title}
-                </h3>
-                <p style={{ fontSize: '0.875rem', color: '#9C9087', lineHeight: '1.7' }}>{v.desc}</p>
-              </div>
-            ))}
+              { icon: 'artesanal', title: '100% Artesanal', desc: 'Cada prenda es tejida a mano, pieza por pieza.' },
+              { icon: 'wool', title: 'Lana Premium', desc: 'Usamos lana merino y materiales naturales de calidad.' },
+              { icon: 'unique', title: 'Prendas únicas', desc: 'Sin producción en masa. Cada una es irrepetible.' },
+              { icon: 'love', title: 'Hecho con amor', desc: 'Una emprendedora detrás de cada tejido.' },
+            ].map((v) => {
+              const IconComponent = VALUE_ICON_MAP[v.icon];
+              return (
+                <div key={v.title}>
+                  <div style={{ color: '#C2AD92', marginBottom: '1.25rem' }}>
+                    <IconComponent color="#C2AD92" size={32} />
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.125rem', fontWeight: 700, color: '#F5F0E8', marginBottom: '0.5rem' }}>
+                    {v.title}
+                  </h3>
+                  <p style={{ fontSize: '0.875rem', color: '#9C9087', lineHeight: '1.7' }}>{v.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -132,20 +256,26 @@ export default function HomePage() {
             <h2 className="section-title">Explorá por categoría</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '1rem' }}>
-            {CATEGORIES.map((cat) => (
-              <Link
-                key={cat.key}
-                href={`/catalog?cat=${cat.key}`}
-                style={{ textDecoration: 'none' }}
-              >
-                <div className="bg-cream-50 border-[1.5px] border-sand-100 rounded-[4px] py-7 px-4 text-center cursor-pointer transition-all duration-300 hover:border-wool-300 hover:bg-cream-100 hover:-translate-y-[3px] hover:shadow-[0_6px_20px_rgba(61,43,31,0.1)]">
-                  <div style={{ fontSize: '1.75rem', marginBottom: '0.625rem' }}>{cat.icon}</div>
-                  <span style={{ fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#5E4F3E' }}>
-                    {cat.label}
-                  </span>
-                </div>
-              </Link>
-            ))}
+            {CATEGORIES.map((cat) => {
+              const IconComponent = CATEGORY_ICON_MAP[cat.key];
+              return (
+                <Link
+                  key={cat.key}
+                  href={`/catalog?cat=${cat.key}`}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div className="bg-cream-50 border-[1.5px] border-sand-100 rounded-[4px] px-4 text-center cursor-pointer transition-all duration-300 hover:border-wool-300 hover:bg-cream-100 hover:-translate-y-[3px] hover:shadow-[0_6px_20px_rgba(61,43,31,0.1)]"
+                       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '110px' }}>
+                    <div style={{ color: '#8B7355', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <IconComponent color="#8B7355" size={28} />
+                    </div>
+                    <span style={{ fontSize: '0.8125rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#5E4F3E' }}>
+                      {cat.label}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -190,8 +320,20 @@ export default function HomePage() {
         overflow: 'hidden',
       }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.05, backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")' }} />
-        <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C2AD92', marginBottom: '1rem' }}>
-          🧶 Encargos personalizados
+        <p style={{
+          fontSize: '0.75rem',
+          fontWeight: 600,
+          letterSpacing: '0.2em',
+          textTransform: 'uppercase',
+          color: '#C2AD92',
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem'
+        }}>
+          <span style={{ fontSize: '0.65rem', color: '#C2AD92' }}>●</span>
+          Encargos personalizados
         </p>
         <h2 style={{ fontFamily: 'var(--font-playfair)', fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 700, color: '#FDFAF5', marginBottom: '1rem' }}>
           ¿Querés algo especial?

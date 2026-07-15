@@ -5,6 +5,66 @@ export const metadata = {
   description: 'La historia detrás de VG Tejidos, una marca artesanal de Buenos Aires.',
 };
 
+// --- SVG Icons for About Page ---
+
+function YarnSkeinIcon({ color = 'currentColor', size = 64 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block', margin: '0 auto' }}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M8 8c2.5-1 5.5 1 8 0M6 12c4-2 8 2 12 0M8 16c2.5 1 5.5-1 8 0" />
+      <line x1="3" y1="21" x2="10" y2="14" />
+      <circle cx="3" cy="21" r="0.5" />
+      <line x1="21" y1="21" x2="14" y2="14" />
+      <circle cx="21" cy="21" r="0.5" />
+    </svg>
+  );
+}
+
+function OrganicWoolIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V2M12 7c2-1 4-2 6-1M12 11c3 0 5-1 6 1M12 15c2 1 4 0 6 2M12 7c-2-1-4-2-6-1M12 11c-3 0-5-1-6 1M12 15c-2 1-4 0-6 2" />
+    </svg>
+  );
+}
+
+function HandcraftedIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 18V5a2 2 0 1 0-4 0v9" />
+      <path d="M18 18V7.5a2 2 0 1 0-4 0v6.5" />
+      <path d="M6 18V11.5a2 2 0 1 1 4 0V14" />
+      <path d="M2 18V9.5a2 2 0 1 1 4 0V14" />
+      <path d="M2 18a10 10 0 0 0 20 0v-4.5a2 2 0 1 0-4 0v1.5" />
+    </svg>
+  );
+}
+
+function DurableIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 2h14M5 22h14M19 2v3a7 7 0 0 1-5 6.6V12.4A7 7 0 0 1 19 19v3M5 2v3a7 7 0 0 0 5 6.6V12.4A7 7 0 0 0 5 19v3" />
+      <path d="M12 12v.01" />
+    </svg>
+  );
+}
+
+function CustomDesignIcon({ color = 'currentColor', size = 32 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+      <path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z" />
+    </svg>
+  );
+}
+
+const VALUES_ICON_MAP = {
+  natural: OrganicWoolIcon,
+  hand: HandcraftedIcon,
+  durable: DurableIcon,
+  custom: CustomDesignIcon,
+};
+
 export default function AboutPage() {
   return (
     <div style={{ paddingTop: '96px' }}>
@@ -40,8 +100,10 @@ export default function AboutPage() {
             padding: '3rem 2rem',
             textAlign: 'center',
           }}>
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧶</div>
-            <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.25rem', fontStyle: 'italic', color: '#5E4F3E', lineHeight: '1.6' }}>
+            <div style={{ color: '#8B7355', display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
+              <YarnSkeinIcon color="#8B7355" size={64} />
+            </div>
+            <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.25rem', fontStyle: 'italic', color: '#5E4F3E', lineHeight: '1.6', margin: 0 }}>
               "Cada punto es una caricia, cada prenda un abrazo."
             </p>
           </div>
@@ -58,34 +120,39 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
             {[
               {
-                icon: '🌿',
+                icon: 'natural',
                 title: 'Natural y sustentable',
                 desc: 'Trabajamos con lana merino, alpaca y fibras naturales que respetan el medio ambiente y cuidan tu piel.',
               },
               {
-                icon: '✋',
+                icon: 'hand',
                 title: 'Hecho a mano',
                 desc: 'Ninguna máquina reemplaza el tejido artesanal. Cada pieza es única e irrepetible.',
               },
               {
-                icon: '⏳',
+                icon: 'durable',
                 title: 'Para durar',
                 desc: 'Diseñamos prendas atemporales que no siguen las tendencias fugaces. Calidad que se nota.',
               },
               {
-                icon: '💫',
+                icon: 'custom',
                 title: 'Personalizado',
                 desc: 'Podés encargar tu prenda en el color, talle y diseño que quieras. Hacemos realidad tu visión.',
               },
-            ].map((v) => (
-              <div key={v.title} style={{ backgroundColor: '#FDFAF5', border: '1px solid #EDE5D5', borderRadius: '4px', padding: '2rem 1.5rem' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.875rem' }}>{v.icon}</div>
-                <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.0625rem', fontWeight: 700, color: '#3D2B1F', marginBottom: '0.625rem' }}>
-                  {v.title}
-                </h3>
-                <p style={{ fontSize: '0.875rem', color: '#9C9087', lineHeight: '1.7' }}>{v.desc}</p>
-              </div>
-            ))}
+            ].map((v) => {
+              const IconComponent = VALUES_ICON_MAP[v.icon];
+              return (
+                <div key={v.title} style={{ backgroundColor: '#FDFAF5', border: '1px solid #EDE5D5', borderRadius: '4px', padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
+                  <div style={{ color: '#A8906F', display: 'flex', alignItems: 'center' }}>
+                    <IconComponent color="#A8906F" size={32} />
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.0625rem', fontWeight: 700, color: '#3D2B1F', margin: 0 }}>
+                    {v.title}
+                  </h3>
+                  <p style={{ fontSize: '0.875rem', color: '#9C9087', lineHeight: '1.7', margin: 0 }}>{v.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 

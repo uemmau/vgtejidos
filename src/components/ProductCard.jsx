@@ -54,15 +54,10 @@ export default function ProductCard({ product }) {
 
       {/* Content */}
       <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.875rem', flex: 1 }}>
-        {/* Name & Price */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
-          <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1rem', fontWeight: 700, color: '#3D2B1F', lineHeight: 1.3 }}>
-            {product.name}
-          </h3>
-          <span style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#3D2B1F', whiteSpace: 'nowrap' }}>
-            ${product.price.toLocaleString('es-AR')}
-          </span>
-        </div>
+        {/* Name */}
+        <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '1rem', fontWeight: 700, color: '#3D2B1F', lineHeight: 1.3 }}>
+          {product.name}
+        </h3>
 
         <p style={{ fontSize: '0.8125rem', color: '#9C9087', lineHeight: '1.6', flexGrow: 1 }}>
           {product.description.length > 90 ? product.description.slice(0, 90) + '...' : product.description}
@@ -121,6 +116,16 @@ export default function ProductCard({ product }) {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Price */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '0.5rem', marginBottom: '0.25rem' }}>
+          <span style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#C4B8AD' }}>
+            Precio
+          </span>
+          <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#3D2B1F' }}>
+            ${product.price.toLocaleString('es-AR')}
+          </span>
         </div>
 
         {/* Add to cart */}

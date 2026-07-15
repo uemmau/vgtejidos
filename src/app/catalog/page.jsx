@@ -126,9 +126,14 @@ function CatalogContent() {
 
         {/* Grid */}
         {filtered.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '4rem 0', color: '#9C9087' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
-            <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>Sin resultados</p>
+          <div style={{ textAlign: 'center', padding: '4rem 0', color: '#9C9087', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{ color: '#C9B99E', display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3M8 11h6" />
+              </svg>
+            </div>
+            <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '1.25rem', color: '#3D2B1F', marginBottom: '0.5rem', fontWeight: 600 }}>Sin resultados</p>
             <p style={{ fontSize: '0.875rem' }}>Probá con otra búsqueda o categoría</p>
           </div>
         ) : (
